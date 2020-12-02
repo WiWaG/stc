@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate') %>
+<h1>Account aanmaken</h1>
+<form id="createAccountForm" class="needs-validation" method="POST" action="/register" novalidate>
+<div class="form-row">
+<div class="form-group col-xl-4 col-sm-6">
+<label for="inputName">Naam</label>
+<input type="text" class="form-control" id="inputName" name="user[name]" required>
+<div class="invalid-feedback">Vul een emailadres in</div>
+</div>
+</div>
+<div class="form-row">
+<div class="form-group col-xl-4 col-sm-6">
+<label for="inputEmail">Email</label>
+<input type="email" class="form-control" id="inputEmail4" name="user[email]" required>
+<div class="invalid-feedback">Vul een emailadres in</div>
+</div>
+</div>
+
+<div class="form-row">
+    <div class="form-group col-xl-4 col-sm-6">
+        <label for="inputPassword">Wachtwoord</label>
+        <input type="password" class="form-control" id="inputPassword" name="user[password]" required>
+        <div class="invalid-feedback">Vul een wachtwoord in</div>
+    </div>
+</div>
+<div class="form-row">
+    <div class="form-group col-xl-4 col-sm-6">
+        <label for="inputPhone">Telefoonnummer (optioneel)</label>
+        <input type="text" class="form-control" id="inputPhone" name="user[phoneNumber]">
+        <div class="invalid-feedback">Vul een telefoonnummer in</div>
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">Aanmaken</button>
+</form>

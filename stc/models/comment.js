@@ -3,25 +3,28 @@ const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
 
-body : {
-type : String,
-required : true
-},
+    body: {
+        type: String,
+        required: true
+    },
 
-date : {
-type : { Date, default: Date.now }
-},
+    date: {
+        type: {
+            Date,
+            default: Date.now
+        }
+    },
 
-author : {
-type : Schema.Types.ObjectId,
-ref : "User"
-},
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
 
-rating : {
-type : Number,
-min : 0,
-max : 5
-}
+    rating: {
+        type: Number,
+        min: 0,
+        max: 5
+    }
 });
 
 module.exports = mongoose.model("Comment", CommentSchema);
