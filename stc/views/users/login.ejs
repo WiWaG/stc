@@ -1,19 +1,20 @@
+<!-- Wouter -->
 <% layout('layouts/boilerplate') %>
 <h1>Inloggen</h1>
 <form id="loginForm" class="needs-validation" method="POST" action="/login" novalidate>
-<div class="form-row">
-<div class="form-group col-xl-4 col-sm-6">
-<label for="inputLoginEmail">Email</label>
-<input type="email" class="form-control" id="inputLoginEmail" name="user[username]" required>
-<div class="invalid-feedback">Vul een emailadres in</div>
-</div>
-</div>
-<div class="form-row">
-<div class="form-group col-xl-4 col-sm-6">
-<label for="inputLoginPassword">Wachtwoord</label>
-<input type="password" class="form-control" id="inputLoginPassword" name="user[password]" required>
-<div class="invalid-feedback">Vul een wachtwoord in</div>
-</div>
-</div>
-<button type="submit" class="btn btn-primary">Inloggen</button>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <label for="inputLoginEmail">Email</label>
+            <input type="email" class="form-control" id="inputLoginEmail" name="user[username]" required>
+            <div class="invalid-feedback">Vul een emailadres in</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <label for="inputLoginPassword">Wachtwoord</label>
+            <input type="password" class="form-control" id="inputLoginPassword" name="user[password]" required>
+            <div class="invalid-feedback">Vul een wachtwoord in</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Inloggen</button>
 </form>
