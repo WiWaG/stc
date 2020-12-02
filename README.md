@@ -1,6 +1,12 @@
 # STC
-## "Samen Tegen Corona"
-*Together against Corona*
+## "Samen Tijdens Corona"
+*Together During Corona*
 
-A codeGorilla
+First codeGorilla project of team "samen-tijdens-corona" 
+
+> members
+- Tahani
+- Wouter
+- Willem
+
 
