@@ -3,6 +3,8 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const User = require("../models/user");
+const Post = require("../models/post");
+const {isLoggedIn} = require("../middleware");
 
 router
     .route("/register")
@@ -48,6 +50,35 @@ router
 router.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
+});
+
+router.route("/vraag").get(async (req, res) => {
+    const posts = await Post.find({
+        categoryType: "vraag"
+    }).populate("author").limit(20);
+    res.render("stc/hulpvraag.ejs", {
+        posts
+    });
+});
+router.route("/aanbod").get(async (req, res) => {
+    const posts = await Post.find({
+        categoryType: "aanbod"
+    }).populate("author").limit(20);
+
+    res.render("stc/hulpvraag.ejs", {
+        posts
+    });
+});
+
+
+router.route("/:id").get(async (req, res) => {
+    const {
+        id
+    } = req.params;
+    const post = await Post.findById(id);
+    res.render("stc/show.ejs", {
+        post
+    });
 });
 
 module.exports = router;
