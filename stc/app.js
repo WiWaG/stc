@@ -3,27 +3,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const express = require("express");
+const express = require('express');
 const session = require('express-session');
 const mongoSanitize = require('express-mongo-sanitize');
 const ExpressError = require('./utils/ExpressError');
 const methodOverride = require('method-override');
-const router = express.Router();
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 const flash = require('connect-flash');
 const helmet = require('helmet');
-const User = require("./models/user");
-const Comment = require("./models/comment");
-const Post = require("./models/post");
-const faker = require("faker");
+const User = require('./models/user');
+// const Comment = require('./models/comment');
+// const Post = require('./models/post');
+const faker = require('faker');
 const userRoutes = require('./routes/userRoutes');
 const stcRoutes = require('./routes/stcRoutes');
 // const reviewRoutes = require('./routes/reviews');
 
-// const Comment = require("./comment");
+// const Comment = require('./comment');
 
-const MongoDBStore = require("connect-mongo")(session);
+const MongoDBStore = require('connect-mongo')(session);
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/stc';
 
 
@@ -138,13 +137,13 @@ app.use((req, res, next) => {
 
 
 app.use('/', userRoutes);
-app.use('/stc', stcRoutes)
-app.use('/stc/:id/reviews', reviewRoutes)
+// app.use('/stc', stcRoutes)
+// app.use('/stc/:id/reviews', reviewRoutes)
 
 
-app.get('/', (req, res) => {
-    res.render('home')
-});
+// app.get('/', (req, res) => {
+//   res.render('home')
+// });
 
 
 app.all('*', (req, res, next) => {
