@@ -23,38 +23,34 @@ router.route("/").post(async (req, res) => {
 });
 
 router.route("/vraag").get(async (req, res) => {
-	const posts = await Post.find({
-		categoryType : "vraag"
-	})
-		.populate("author")
-		.limit(20);
-	res.render("stc/hulpvraag.ejs", {
-		posts
-	});
+    const posts = await Post.find({
+        categoryType : "vraag"
+    })
+        .populate("author")
+        .sort({ date: -1 })
+        .limit(20);
+    res.render("stc/hulpvraag.ejs", {
+        posts
+    });
 });
-
 router.route("/aanbod").get(async (req, res) => {
-	const posts = await Post.find({
-		categoryType : "aanbod"
-	})
-		.populate("author")
-		.limit(20);
-
-	res.render("stc/hulpvraag.ejs", {
-		posts
-	});
+    const posts = await Post.find({
+        categoryType : "aanbod"
+    })
+        .populate("author")
+        .sort({ date: -1 })
+        .limit(20);
+    res.render("stc/hulpvraag.ejs", {
+        posts
+    });
 });
-
 router.route("/create").get(isLoggedIn, (req, res) => {
 	res.render("stc/createhulp.ejs");
 });
-
-router
-	.route("/:id")
+router.route("/:id")
 	.get(async (req, res) => {
 		const { id } = req.params;
-		const post = await Post.findById(id).populate("comments");
-
+		const post = await (await Post.findById(id).populate("comments")).populate("author");
 		res.render("stc/show.ejs", {
 			post
 		});
@@ -64,5 +60,6 @@ router
 		await Post.findByIdAndDelete(id);
 		res.redirect("/");
 	});
+
 
 module.exports = router;

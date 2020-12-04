@@ -1,0 +1,71 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container-fluid">
+    <div class="row jumbotron">
+        <div class="col-md-12 col-lg-6">
+            <h2 class="display">Neem contact met ons</h2>
+            <form action="#">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone">Telefoonnummer</label>
+                        <input type="number" class="form-control" id="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3 col-6">
+                        <label for="land">Land</label>
+                        <select type="text" class="form-control" id="land">
+                            <option value="nl">Nederland</option>
+                            <option value="be">Belgie</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="stad">Stad</label>
+                        <input type="text" class="form-control" id="stad">
+                    </div>
+
+                    <div class="form-group col-md-3 col-6">
+                        <label for="postcode">Postcode</label>
+                        <input type="text" class="form-control" id="postcode">
+                    </div>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">ik ga akkoord met de voorwaarden</label>
+                </div>
+                <div class="form-group form-check">
+                    <input class="form-check-input" type="radio" name="contactRadios" id="contactRadios1"
+                        value="option1" checked>
+                    <label class="form-check-label" for="exampleRadios1">
+                        Bericht
+                    </label>
+                </div>
+                <div class="form-group form-check">
+                    <input class="form-check-input" type="radio" name="contactRadios" id="contactRadios"
+                        value="option2">
+                    <label class="form-check-label" for="exampleRadios2">
+                        Klacht
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <!--Google map-->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2389.2041481203!2d6.567055215833439!3d53.21418787995159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c9cd5411a28bbd%3A0x7f8ef576775ff30e!2sVan%20Elmpthuis!5e0!3m2!1snl!2snl!4v1607075701350!5m2!1snl!2snl"
+                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+        <!--Google Maps-->
+    </div>
+</div>
+</div>
+<!--- Connect -->

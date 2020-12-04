@@ -148,6 +148,10 @@ app.get("/contact", (req, res) => {
     res.render("stc/contact");
 });
 
+app.get("/account", (req, res) => {
+    res.render("stc/account");
+});
+
 app.all("*", (req, res, next) => {
 	next(new ExpressError("Page Not Found", 404));
 });

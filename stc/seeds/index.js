@@ -73,6 +73,7 @@ await user.save();
 };
 */
 
+
 seedDB().then(() => {
     mongoose.connection.close();
 });

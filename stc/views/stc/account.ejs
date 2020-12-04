@@ -1,0 +1,16 @@
+<% layout('layouts/boilerplate') %>
+<h1>My account</h1>
+<div class="container mb-5">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="">
+        <div class="card-body">
+            <h4 class="card-title">Naam: <%= currentUser.name %></h4>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Email: <%= currentUser.email %></li>
+            <li class="list-group-item">Telefoonnummer: <%= currentUser.phoneNumber %></li>
+        </ul>
+    </div>
+</div>
