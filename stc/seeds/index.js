@@ -29,7 +29,7 @@ const seedDB = async () => {
             title: faker.lorem.sentence(5),
             body: faker.lorem.paragraphs(),
             date: faker.date.between("2020-03-01", "2020-12-01"),
-            author: "5fc61fbc69938709e8192285" /* Vul hier een MongoDB _id in van je user*/ ,
+            author: "5fc9f7d4285b92039e49817d" /* Vul hier een MongoDB _id in van je user*/ ,
             categoryType: faker.random.arrayElement(["aanbod", "vraag"])
             // categoryRequestType  : ,
             // region:

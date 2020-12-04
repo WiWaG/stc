@@ -1,0 +1,44 @@
+<!-- Wouter -->
+<% layout('layouts/boilerplate') %>
+<h1>Maak een nieuwe hulpverzoek of hulpaanbod aan</h1>
+<form id="loginForm" class="needs-validation" method="POST" action="/stc" novalidate>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <div class="form-check">
+
+                <input type="radio" class="form-check-input" id="inputCategory1" name="post[category]" value="aanbod"
+                    required>
+                <label for="inputCategory1" class="form-check-label">Ik heb een hulpverzoek</label>
+            </div>
+            <div class="form-check">
+
+                <input type="radio" class="form-check-input" id="inputCategory2" name="post[category]" value="vraag"
+                    required>
+                <label for="inputCategory2" class="form-check-label">Ik wil hulp aanbieden</label>
+            </div>
+            <div class="invalid-feedback">Maak een keus tussen hulpverzoek of hulpaanbod</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <label for="inputTitle">Titel</label>
+            <input type="text" class="form-control" id="inputTitle" name="post[title]" required>
+            <div class="invalid-feedback">Vul een titel in</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <label for="inputRegion">Regio</label>
+            <input type="text" class="form-control" id="inputRegion" name="post[region]" required>
+            <div class="invalid-feedback">Vul een regio in</div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-xl-4 col-sm-6">
+            <label for="inputBody">Omschrijving</label>
+            <textarea class="form-control" id="inputBody" name="post[body]" rows="5" required></textarea>
+            <div class="invalid-feedback">Vul een omschrijving in</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Plaatsen</button>
+</form>

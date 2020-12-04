@@ -1,1 +1,63 @@
-<!-- Tahani -->
+<% layout('layouts/boilerplate') %>
+
+<h1>show</h1>
+
+<div class="row container-fluid">
+    <div class="col-md-12 col-lg-6">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.body %></p>
+            </div>
+            <div class="card-body">
+                <a href="" class="card-link btn btn-primary">Edit Post</a>
+                <form class="d-inline" action="/stc/<%=post._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Delete Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+        <h2>Leave a Comments</h2>
+        <form action="/stc/<%= post._id %>/comments/create" method="POST" class="mb-3 needs-validation">
+            <!--<div class="mb-3">
+                <label class="form-label" for="rating">Rating</label>
+                <input class="form-range" type="range" min="1" max="5" name="comment[rating]" id="rating">
+            </div>-->
+            <fieldset class="starability-basic">
+                <legend>First rating:</legend>
+                <input type="radio" id="no-rate" class="input-no-rate" name="comment[rating]" value="0" checked
+                    aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="comment[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="comment[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="comment[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="comment[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="comment[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+            </fieldset>
+            <div class="mb-3">
+                <label class="form-label" for="body">Comments</label>
+                <textarea class="form-control" name="comment[body]" id="body" cols="30" rows="3" required></textarea>
+            </div>
+            <button class="btn btn-success">Submit</button>
+        </form>
+        <% for (let comment of post.comments) {%>
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Rating: <%= comment.rating %></h5>
+                <p class="starability-result" data-rating="<%= comment.rating %>">
+                    Rated: <%= comment.rating %>
+                </p>
+                <p class="card-text">Comment: <%= comment.body %></p>
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+
+</div>

@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+
+<h1>hulpvraag</h1>
+
+<div class="container-fluid d-flex flex-wrap">
+    <% for(let p of posts) { %>
+    <div class="col-sm-12 col-md-4">
+        <div class="card mb-3 shadow">
+            <div class="card-body">
+                <h5 class="card-title"><a href="/stc/<%= p._id %>"><%= p.title %></a></h5>
+                <h6 class="card-subtitle mb-2 text-muted">In <%= p.date.toLocaleString()%></h6>
+                <p class="card-text text-truncate"><%= p.body %></p>
+                <h6>Author: <%= p.author.name%></h6>
+                <a href="/stc/<%= p._id %>" class="card-link">Meer info</a>
+                <div class="card-footer">
+                    Region: <%= p.region%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
